@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.Serialization;
-using UnityEngine.Timeline;
 
 public class PlayerCombat : MonoBehaviour
 {
