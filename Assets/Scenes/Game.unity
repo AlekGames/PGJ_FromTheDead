@@ -307,6 +307,7 @@ GameObject:
   - component: {fileID: 864007985}
   - component: {fileID: 864007988}
   - component: {fileID: 864007989}
+  - component: {fileID: 864007990}
   m_Layer: 3
   m_Name: Boss
   m_TagString: Untagged
@@ -412,6 +413,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &864007990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864007984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04323dcd368dd4e44acecf6f01129f87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3469431917350708124, guid: c6a5f5b2e4acd24438b658eb76194af8, type: 3}
+  numberOfPrefabs: 15
+  radius: 3
 --- !u!1 &1048791914
 GameObject:
   m_ObjectHideFlags: 0
@@ -1158,37 +1174,6 @@ MonoBehaviour:
   AmplitudeGain: 0
   FrequencyGain: 1
   m_NoiseOffsets: {x: 52.135834, y: -532.3236, z: -871.10547}
---- !u!1 &1529314868
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1529314869}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1529314869
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1529314868}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.062424, y: 0.58607167, z: -0.076502375}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1569530919
 GameObject:
   m_ObjectHideFlags: 0
@@ -1913,4 +1898,3 @@ SceneRoots:
   - {fileID: 1061275039}
   - {fileID: 864007987}
   - {fileID: 1194410795}
-  - {fileID: 1529314869}
