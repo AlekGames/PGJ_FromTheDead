@@ -32,7 +32,7 @@ public class Boss_Idle : StateMachineBehaviour
             targetPos = randomPos;
         }
         
-        transform.position = Vector2.MoveTowards((Vector2)transform.position, targetPos, moveSpeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
