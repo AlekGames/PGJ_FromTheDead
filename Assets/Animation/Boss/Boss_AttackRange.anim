@@ -1235,7 +1235,7 @@ AnimationClip:
   - time: 1.1333333
     functionName: SpawnPrefabsInCircle
     data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
+    objectReferenceParameter: {fileID: 3469431917350708124, guid: c6a5f5b2e4acd24438b658eb76194af8, type: 3}
+    floatParameter: 11
+    intParameter: 3
     messageOptions: 0
