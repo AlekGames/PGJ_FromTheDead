@@ -14,7 +14,6 @@ public class DashAttack : MonoBehaviour
 
     void Dash()
     {
-        Debug.Log("Dash");
         StartCoroutine(DashCoroutine());
     }
     
@@ -28,7 +27,6 @@ public class DashAttack : MonoBehaviour
         while (elapsedTime < dashDuration)
         {
             elapsedTime += Time.deltaTime;
-            Debug.Log(Vector2.Distance(player.position, transform.position));
             
             if (Vector2.Distance(player.position, transform.position) <= contactThreshold)
             {
