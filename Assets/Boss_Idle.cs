@@ -66,7 +66,7 @@ public class Boss_Idle : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        bossCollider.enabled = false;
+        bossCollider.enabled = true;
         animator.ResetTrigger("AttackRange");
         animator.ResetTrigger("Dash");
         animator.ResetTrigger("AOE");
