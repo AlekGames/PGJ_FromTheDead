@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     public AudioClip incorrectSound;
     private AudioSource audioSource;
 
-
+    public TimerManager timerManager;
 
     void Start()
     {
@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
 
         // Afficher l’indice
         if (hintText != null)
-            hintText.text = $"\"{currentWord.hint}\"";
+            hintText.text = $"{currentWord.hint}";
 
         Debug.Log("Mot à deviner : " + wordToGuess);
         Debug.Log("indice : " + currentWord.hint);
@@ -89,6 +89,7 @@ public class GameManager : MonoBehaviour
         // Générer les lettres à l’écran
         GenerateLetterSlots();
         StartCoroutine(DelayedUpdateDisplayedWord());
+        timerManager.StartTimer();
     }
 
     int GetLettersToGuessCount()
@@ -193,7 +194,7 @@ public class GameManager : MonoBehaviour
                 difficultyLevel++;
 
             // Lancer un nouveau mot avec difficulté augmentée
-            Invoke("StartNewGame", 0.5f); // ou 1f pour une petite pause
+            Invoke("StartNewGame", 1f); 
         }
 
         else if (attemptsLeft <= 0)
@@ -267,7 +268,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
+    public void TriggerGameOverByTimer()
+    {
+        Debug.Log("GAME OVER: Temps écoulé !");
+        ShowGameOver();
+    }
 
     System.Collections.IEnumerator StopGhostParticlesAfter(float delay)
     {
@@ -285,7 +290,7 @@ public class GameManager : MonoBehaviour
     float elapsed = 0f;
 
     Vector3 originalScale = text.transform.localScale;
-    text.transform.localScale = originalScale * 1.3f; // pop up
+    text.transform.localScale = originalScale * 1.3f; 
 
     while (elapsed < duration)
     {
