@@ -12,6 +12,7 @@ public class Boss_Idle : StateMachineBehaviour
     private Vector3 targetPos;
     private float elapsedTime;
     private float elapsedAttackTime;
+    private Collider2D bossCollider;
     
     private Transform transform;
     
@@ -21,6 +22,9 @@ public class Boss_Idle : StateMachineBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         targetPos = player.position + player.forward * startDist;
         transform = animator.GetComponent<Transform>();
+        bossCollider = animator.GetComponent<Collider2D>();
+        
+        bossCollider.enabled = false;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -62,6 +66,7 @@ public class Boss_Idle : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        bossCollider.enabled = false;
         animator.ResetTrigger("AttackRange");
         animator.ResetTrigger("Dash");
         animator.ResetTrigger("AOE");
