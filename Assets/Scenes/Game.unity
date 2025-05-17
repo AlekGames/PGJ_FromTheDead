@@ -1343,6 +1343,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  attackRate: 2
+  randomAttackOffset: 1
   animatorController: {fileID: 864007989}
 --- !u!95 &864007989
 Animator:
@@ -3115,6 +3117,10 @@ PrefabInstance:
     - target: {fileID: 2516098332796238962, guid: 893f3e035f445454988b054d4581b6cb, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 3590517475480357358, guid: 893f3e035f445454988b054d4581b6cb, type: 3}
+      propertyPath: attackRange
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5586696385828010560, guid: 893f3e035f445454988b054d4581b6cb, type: 3}
       propertyPath: m_LocalScale.x
