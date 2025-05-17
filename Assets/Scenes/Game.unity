@@ -3133,6 +3133,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5796695632785917673, guid: 893f3e035f445454988b054d4581b6cb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796695632785917673, guid: 893f3e035f445454988b054d4581b6cb, type: 3}
+      propertyPath: m_AssetsPPU
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796695632785917673, guid: 893f3e035f445454988b054d4581b6cb, type: 3}
       propertyPath: m_CropFrame
       value: 0
       objectReference: {fileID: 0}
@@ -3140,13 +3148,21 @@ PrefabInstance:
       propertyPath: m_GridSnapping
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5796695632785917673, guid: 893f3e035f445454988b054d4581b6cb, type: 3}
+      propertyPath: m_RefResolutionX
+      value: 466
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796695632785917673, guid: 893f3e035f445454988b054d4581b6cb, type: 3}
+      propertyPath: m_RefResolutionY
+      value: 270
+      objectReference: {fileID: 0}
     - target: {fileID: 5810562562129904544, guid: 893f3e035f445454988b054d4581b6cb, type: 3}
       propertyPath: m_LocalPosition.z
       value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 5958890052771089679, guid: 893f3e035f445454988b054d4581b6cb, type: 3}
       propertyPath: orthographic size
-      value: 9
+      value: 9.642858
       objectReference: {fileID: 0}
     - target: {fileID: 5958890052771089679, guid: 893f3e035f445454988b054d4581b6cb, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
