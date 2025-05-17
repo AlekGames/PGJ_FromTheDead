@@ -35,18 +35,18 @@ public class DeathRayAttack : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
             
-            if (player.position.y < 0)
+            if (player.position.y < -1.5f)
             {
                 player.GetComponent<PlayerHealth>().TakeDamage(aoeDamage);
             }
             yield return null;
         }
         elapsedTime = 0;
-        
-        while (elapsedTime < toAttackPositionDuration)
+        float time = toAttackPositionDuration / 2;
+        while (elapsedTime < time)
         {
             elapsedTime += Time.deltaTime;
-            transform.position = Vector2.LerpUnclamped(targetPos, initialPos, elapsedTime / toAttackPositionDuration);
+            transform.position = Vector2.LerpUnclamped(targetPos, initialPos, elapsedTime / time);
             yield return null;
         }
         transform.position = initialPos;

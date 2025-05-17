@@ -1,10 +1,40 @@
 fileFormatVersion: 2
-guid: 1ed86d95eabdf634caa5e72dac937743
+guid: 3a8f0bd68c1757a48a0a62923e585bb1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7928812520351500819
-    second: cat_4_0
+      213: 3182500231822754245
+    second: plateforme_0
+  - first:
+      213: -8335453268366291970
+    second: plateforme_1
+  - first:
+      213: -7625250921338426240
+    second: plateforme_2
+  - first:
+      213: -793899099361120375
+    second: plateforme_3
+  - first:
+      213: -2446089246198017659
+    second: plateforme_4
+  - first:
+      213: 8520818496019846624
+    second: plateforme_5
+  - first:
+      213: 3845109452089933761
+    second: plateforme_6
+  - first:
+      213: -4391967172264360946
+    second: plateforme_7
+  - first:
+      213: 1914564814355957304
+    second: plateforme_8
+  - first:
+      213: 5305309027044001445
+    second: plateforme_9
+  - first:
+      213: -8527243246711329300
+    second: plateforme_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +82,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 152, y: 32, z: 76, w: 62}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -113,23 +143,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cat_4_0
+      name: plateforme_8
       rect:
         serializedVersion: 2
-        x: 4
-        y: 0
-        width: 224
-        height: 106
+        x: 92
+        y: 31
+        width: 18
+        height: 13
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 111, y: 40, z: 111, w: 30}
+      border: {x: 9, y: 0, z: 9, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: de577c9750337f190800000000000000
-      internalID: -7928812520351500819
+      spriteID: 836062b0e86e19a10800000000000000
+      internalID: 1914564814355957304
       vertices: []
       indices: 
       edges: []
@@ -138,8 +168,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 24858dd2578e75e45b8482938ae9a8f4
-    internalID: 0
+    spriteID: 8ef336a44f8adef49bc82f8813eab77c
+    internalID: 1310534016
     vertices: []
     indices: 
     edges: []
@@ -148,7 +178,18 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cat_4_0: -7928812520351500819
+      plateforme 1_0: 732123429
+      plateforme_0: 3182500231822754245
+      plateforme_1: -8335453268366291970
+      plateforme_10: -8527243246711329300
+      plateforme_2: -7625250921338426240
+      plateforme_3: -793899099361120375
+      plateforme_4: -2446089246198017659
+      plateforme_5: 8520818496019846624
+      plateforme_6: 3845109452089933761
+      plateforme_7: -4391967172264360946
+      plateforme_8: 1914564814355957304
+      plateforme_9: 5305309027044001445
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 1ed86d95eabdf634caa5e72dac937743
+guid: 26c85a8652e578b4a8d53ae5296b0ba5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7928812520351500819
-    second: cat_4_0
+      213: 1208040086343421634
+    second: image_0
+  - first:
+      213: 3888885927669863452
+    second: image_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,7 +51,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -113,23 +116,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cat_4_0
+      name: image_0
       rect:
         serializedVersion: 2
-        x: 4
+        x: 0
         y: 0
-        width: 224
-        height: 106
+        width: 62
+        height: 89
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 111, y: 40, z: 111, w: 30}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: de577c9750337f190800000000000000
-      internalID: -7928812520351500819
+      spriteID: 2ce8eecde02d3c010800000000000000
+      internalID: 1208040086343421634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: image_1
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 88
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1417c2a52918f530800000000000000
+      internalID: 3888885927669863452
       vertices: []
       indices: 
       edges: []
@@ -138,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 24858dd2578e75e45b8482938ae9a8f4
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cat_4_0: -7928812520351500819
+      image_0: 1208040086343421634
+      image_1: 3888885927669863452
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

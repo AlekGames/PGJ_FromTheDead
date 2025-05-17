@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Player;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -45,5 +46,10 @@ public class PlayerHealth : MonoBehaviour
         playerAnimator.SetTrigger("Death");
         GetComponent<PlayerController>().enabled = false;
         enabled = false;
+    }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene("StartScreen");
     }
 }
