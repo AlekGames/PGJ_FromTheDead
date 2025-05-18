@@ -54,10 +54,10 @@ namespace Player
         {
             _frameInput = new FrameInput
             {
-                JumpDown = Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.Z),
-                JumpHeld = Input.GetButton("Jump") || Input.GetKey(KeyCode.Z),
+                JumpDown = Input.GetButtonDown("Jump"),
+                JumpHeld = Input.GetButton("Jump"),
                 Move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")),
-                DashDown = Input.GetButtonDown("Dash") || Input.GetKeyDown(KeyCode.LeftShift),
+                DashDown = Input.GetButtonDown("Dash"),
             };
 
             if (stats.snapInput)
@@ -205,6 +205,7 @@ namespace Player
             dashParticles.Play();
             dashTrail.emitting = true;
             ScreenShake.Instance.ShakeCamera(10f, 0.2f);
+            SoundManager.PlaySound(SoundType.PLAYER_DASH);
             
             float facingSign = Mathf.Sign(transform.localScale.x);
             // Stretch the player in dash direction

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      underworld_darker_0: -301821510521910975
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

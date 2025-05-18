@@ -18,19 +18,20 @@ public class PlayerCombat : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Attack();
+                playerAnimator.SetTrigger("Attack");
                 nextAttackTime = Time.time + 1f / attackRate;
             }
         }
     }
 
-    private void Attack()
+    public void Attack()
     {
-        playerAnimator.SetTrigger("Attack");
+        
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
         foreach (var enemy in hitEnemies)
         {
+            SoundManager.PlaySound(SoundType.PLAYER_ATTACK);
             ScreenShake.Instance.ShakeCamera(10f, 0.2f);
             enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
         }

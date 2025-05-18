@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e5df18888f7a349a209eb389ba4d53, type: 3}
+  m_Name: Sounds SO
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: PLAYER_ATTACK
+    volume: 1
+    mixer: {fileID: 24300002, guid: e1ce910c5726f4e4fb3787781d232ab4, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: cae0d8bce3b1d9b40af37e0c7015170f, type: 3}
+  - name: PLAYER_DASH
+    volume: 1
+    mixer: {fileID: 24300002, guid: e1ce910c5726f4e4fb3787781d232ab4, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: 6b46a843586de274a98c4a3e9eba5c31, type: 3}
+  - name: BOSS_DASH
+    volume: 1
+    mixer: {fileID: 24300002, guid: e1ce910c5726f4e4fb3787781d232ab4, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: c431cf8b33b9bf5408f66aafcc778676, type: 3}
+  - name: BOSS_FIRE_ATTACK
+    volume: 0.6
+    mixer: {fileID: 24300002, guid: e1ce910c5726f4e4fb3787781d232ab4, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: 91401343feda8e043bb130dfceaeb665, type: 3}
+  - name: CLICK
+    volume: 1
+    mixer: {fileID: 24300002, guid: e1ce910c5726f4e4fb3787781d232ab4, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: e333cfdbe0fdfe7418dc15ac386629f9, type: 3}
+  - name: BUTTON
+    volume: 1
+    mixer: {fileID: 24300002, guid: e1ce910c5726f4e4fb3787781d232ab4, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: b44259fc1d6762340af06b8fb47946b3, type: 3}
+  - name: LASER
+    volume: 0.01
+    mixer: {fileID: 24300002, guid: e1ce910c5726f4e4fb3787781d232ab4, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: a6ac2eaa4541a5f4a99a5b836d17a5cb, type: 3}
+  - name: GRANDMA_HURT
+    volume: 1
+    mixer: {fileID: 24300002, guid: e1ce910c5726f4e4fb3787781d232ab4, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: 4c493c3ae0338654483e8a7957fade52, type: 3}
+    - {fileID: 8300000, guid: 090c7469a1653c6498e527d21c265dc7, type: 3}
+  - name: BOSS_HURT
+    volume: 0.742
+    mixer: {fileID: 24300002, guid: e1ce910c5726f4e4fb3787781d232ab4, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: b8477fc77b262144cb6a5fff339622cb, type: 3}
+    - {fileID: 8300000, guid: ca2075e4cf0107349acd5232362a1aed, type: 3}
+  - name: BOSS_DEATH
+    volume: 1
+    mixer: {fileID: 24300002, guid: e1ce910c5726f4e4fb3787781d232ab4, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: 12cf127b2395ddf4b9384b49c1a7795d, type: 3}
