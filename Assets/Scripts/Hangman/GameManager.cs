@@ -4,6 +4,8 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI hintText;
+    public GameObject letterOrbPrefab;
+
     public GameObject letterSlotPrefab;
     public Transform letterContainer;
 
@@ -37,20 +39,52 @@ public class GameManager : MonoBehaviour
 
     public AudioClip correctSound;
     public AudioClip incorrectSound;
+
+    public AudioClip gameStart;
     private AudioSource audioSource;
 
     public TimerManager timerManager;
 
+    public DialogueManager dialogueManager;
+
+    public IntroSequence introSequence;
+
+    public AudioClip tickingSound;
+    private AudioSource tickingSource;
+
+    public UIScreenShake screenShake;
+
+
+
     void Start()
     {
-        StartNewGame();
+       
         audioSource = GetComponent<AudioSource>();
+        dialogueManager.dialogueText.text = "";
+        StartCoroutine(introSequence.RunIntro(this));
+
+       
+        tickingSource = gameObject.AddComponent<AudioSource>();
+        tickingSource.loop = true;
+        tickingSource.playOnAwake = false;
+        tickingSource.clip = tickingSound;
 
 
     }
 
-    void StartNewGame()
+
+ 
+    public void StartNewGame()
     {
+       
+
+
+       if (audioSource != null && gameStart != null)
+        {
+            audioSource.PlayOneShot(gameStart);
+        }
+
+       
         // Choisir un mot aléatoire
         currentWord = wordsWithHints[Random.Range(0, wordsWithHints.Length)];
         wordToGuess = currentWord.word.ToUpper();
@@ -77,16 +111,21 @@ public class GameManager : MonoBehaviour
         }
 
 
-        // Afficher l’indice
-        if (hintText != null)
+      
+        /*if (hintText != null)
             hintText.text = $"{currentWord.hint}";
+        */
+        dialogueManager.ShowDialogue(currentWord.hint);
 
+        
         Debug.Log("Mot à deviner : " + wordToGuess);
         Debug.Log("indice : " + currentWord.hint);
         Debug.Log("Difficulté : " + difficultyLevel);
         Debug.Log("Lettres à deviner : " + GetLettersToGuessCount() + " sur " + wordToGuess.Length);
 
-        // Générer les lettres à l’écran
+        if (tickingSource != null && tickingSound != null)
+         tickingSource.Play();
+
         GenerateLetterSlots();
         StartCoroutine(DelayedUpdateDisplayedWord());
         timerManager.StartTimer();
@@ -121,7 +160,10 @@ public class GameManager : MonoBehaviour
         // Créer un slot par lettre
         for (int i = 0; i < wordToGuess.Length; i++)
         {
-            Instantiate(letterSlotPrefab, letterContainer);
+        GameObject orb = Instantiate(letterOrbPrefab, letterContainer);
+        TextMeshProUGUI text = orb.GetComponentInChildren<TextMeshProUGUI>();
+        text.text = currentGuess[i].ToString();
+
         }
     }
 
@@ -174,6 +216,12 @@ public class GameManager : MonoBehaviour
         else
         {
             attemptsLeft--;
+
+            if (screenShake != null)
+                Debug.Log("Screen shake lancé !");
+                screenShake.Shake();
+
+
             audioSource.PlayOneShot(incorrectSound);
             Debug.Log("Lettre incorrecte. Essais restants : " + attemptsLeft);
             MoveGhostUp();
@@ -188,13 +236,22 @@ public class GameManager : MonoBehaviour
         if (new string(currentGuess) == wordToGuess)
         {
             Debug.Log("Gagné !");
+
+        foreach (Transform child in letterContainer)
+        {
+            OrbPopEffect popEffect = child.GetComponent<OrbPopEffect>();
+            if (popEffect != null)
+            {
+                popEffect.Pop();
+            }
+        }
             
             // Incrémenter la difficulté (max = 4)
             if (difficultyLevel < 4)
                 difficultyLevel++;
 
             // Lancer un nouveau mot avec difficulté augmentée
-            Invoke("StartNewGame", 1f); 
+            Invoke("StartNewGame", 2f); 
         }
 
         else if (attemptsLeft <= 0)
@@ -237,7 +294,11 @@ public class GameManager : MonoBehaviour
             text.text = c == ' ' ? " " : c.ToString();
         }
 
-        hintText.text = "you really died now..";
+        //hintText.text = "you really died now..";
+        dialogueManager.ShowDialogue("you really died now..");
+
+        if (tickingSource != null)
+        tickingSource.Stop();
 
     }
 
@@ -260,7 +321,7 @@ public class GameManager : MonoBehaviour
 
         if (ghostParticles != null)
         {
-            ghostParticles.transform.position = ghostTransform.position;
+            ghostParticles.transform.position = ghostTransform.position - new Vector3(0, 0f, 1f);
             ghostParticles.Stop();
             ghostParticles.Clear();
             ghostParticles.Play();
