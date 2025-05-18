@@ -6,7 +6,11 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<<< HEAD:Assets/Animation/GrandmaFloat.anim
   m_Name: GrandmaFloat
+========
+  m_Name: Darken
+>>>>>>>> origin/Dev:Assets/Animation/UI/Darken.anim
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -23,7 +27,11 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
+<<<<<<<< HEAD:Assets/Animation/GrandmaFloat.anim
         value: -193
+========
+        value: 1
+>>>>>>>> origin/Dev:Assets/Animation/UI/Darken.anim
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -31,14 +39,20 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
+<<<<<<<< HEAD:Assets/Animation/GrandmaFloat.anim
         time: 0.71666664
         value: -180
+========
+        time: 1
+        value: 0.3
+>>>>>>>> origin/Dev:Assets/Animation/UI/Darken.anim
         inSlope: 0
         outSlope: 0
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+<<<<<<<< HEAD:Assets/Animation/GrandmaFloat.anim
       - serializedVersion: 3
         time: 1.3333334
         value: -188
@@ -64,6 +78,15 @@ AnimationClip:
     path: 
     classID: 224
     script: {fileID: 0}
+========
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Intensity
+    path: 
+    classID: 114
+    script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+>>>>>>>> origin/Dev:Assets/Animation/UI/Darken.anim
     flags: 0
   m_PPtrCurves: []
   m_SampleRate: 60
@@ -75,10 +98,17 @@ AnimationClip:
     genericBindings:
     - serializedVersion: 2
       path: 0
+<<<<<<<< HEAD:Assets/Animation/GrandmaFloat.anim
       attribute: 538195251
       script: {fileID: 0}
       typeID: 224
       customType: 28
+========
+      attribute: 898800009
+      script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+      typeID: 114
+      customType: 0
+>>>>>>>> origin/Dev:Assets/Animation/UI/Darken.anim
       isPPtrCurve: 0
       isIntCurve: 0
       isSerializeReferenceCurve: 0
@@ -110,7 +140,11 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
+<<<<<<<< HEAD:Assets/Animation/GrandmaFloat.anim
         value: -193
+========
+        value: 1
+>>>>>>>> origin/Dev:Assets/Animation/UI/Darken.anim
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -118,6 +152,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
+<<<<<<<< HEAD:Assets/Animation/GrandmaFloat.anim
         time: 0.71666664
         value: -180
         inSlope: 0
@@ -138,6 +173,10 @@ AnimationClip:
       - serializedVersion: 3
         time: 2
         value: -193
+========
+        time: 1
+        value: 0.3
+>>>>>>>> origin/Dev:Assets/Animation/UI/Darken.anim
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -147,10 +186,17 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+<<<<<<<< HEAD:Assets/Animation/GrandmaFloat.anim
     attribute: m_AnchoredPosition.y
     path: 
     classID: 224
     script: {fileID: 0}
+========
+    attribute: m_Intensity
+    path: 
+    classID: 114
+    script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+>>>>>>>> origin/Dev:Assets/Animation/UI/Darken.anim
     flags: 0
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
