@@ -31,6 +31,7 @@ public class PlayerCombat : MonoBehaviour
 
         foreach (var enemy in hitEnemies)
         {
+            SoundManager.PlaySound(SoundType.PLAYER_ATTACK);
             ScreenShake.Instance.ShakeCamera(10f, 0.2f);
             enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
         }

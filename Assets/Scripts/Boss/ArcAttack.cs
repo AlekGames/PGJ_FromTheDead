@@ -11,6 +11,7 @@ public class ArcAttack : MonoBehaviour
     {
         if (prefab == null || numberOfPrefabs <= 0) return;
 
+        SoundManager.PlaySound(SoundType.BOSS_FIRE_ATTACK);
         for (int i = 0; i < numberOfPrefabs; i++)
         {
             float angle = i * Mathf.PI * 2f / numberOfPrefabs;

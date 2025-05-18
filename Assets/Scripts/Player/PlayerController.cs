@@ -205,6 +205,7 @@ namespace Player
             dashParticles.Play();
             dashTrail.emitting = true;
             ScreenShake.Instance.ShakeCamera(10f, 0.2f);
+            SoundManager.PlaySound(SoundType.PLAYER_DASH);
             
             float facingSign = Mathf.Sign(transform.localScale.x);
             // Stretch the player in dash direction

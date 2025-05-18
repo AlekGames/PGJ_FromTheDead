@@ -34,6 +34,7 @@ public class DeathRayAttack : MonoBehaviour
         while (elapsedTime < attackDuration)
         {
             elapsedTime += Time.deltaTime;
+            SoundManager.PlaySound(SoundType.LASER);
             
             if (player.position.y < -1.5f)
             {
@@ -42,7 +43,7 @@ public class DeathRayAttack : MonoBehaviour
             yield return null;
         }
         elapsedTime = 0;
-        float time = toAttackPositionDuration / 2;
+        float time = toAttackPositionDuration;
         while (elapsedTime < time)
         {
             elapsedTime += Time.deltaTime;

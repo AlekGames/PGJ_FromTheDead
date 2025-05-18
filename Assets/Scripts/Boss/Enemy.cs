@@ -1,6 +1,5 @@
-using System;
-
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour
@@ -45,6 +44,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        SoundManager.PlaySound(SoundType.BOSS_HURT);
         currentHealth -= damage;
         animatorController.SetTrigger("Hurt");
 
@@ -56,6 +56,13 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
-        Destroy(gameObject);
+        SoundManager.PlaySound(SoundType.BOSS_DEATH);
+        animatorController.SetTrigger("Die");
+        enabled = false;
+    }
+    
+    public void GameOver()
+    {
+        SceneManager.LoadScene("WinScreen");
     }
 }

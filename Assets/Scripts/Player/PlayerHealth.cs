@@ -23,6 +23,7 @@ public class PlayerHealth : MonoBehaviour
         {
             return;
         }
+        SoundManager.PlaySound(SoundType.GRANDMA_HURT);
         currentHealth -= damage;
         playerAnimator.SetTrigger("Hurt");
         ScreenShake.Instance.ShakeCamera(10f, 0.2f);
@@ -50,6 +51,6 @@ public class PlayerHealth : MonoBehaviour
 
     public void GameOver()
     {
-        SceneManager.LoadScene("StartScreen");
+        SceneManager.LoadScene("LoseScreen");
     }
 }

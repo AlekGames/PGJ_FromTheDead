@@ -7,6 +7,7 @@ public class LoadScene : MonoBehaviour
 
     public void LoadNextScene()
     {
+        SoundManager.PlaySound(SoundType.BUTTON);
         SceneManager.LoadScene(sceneToLoad);
     }
 }

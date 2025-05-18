@@ -23,6 +23,7 @@ public class DashAttack : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         Vector2 randomPos = (Vector2)player.position + Random.insideUnitCircle * dashPrecision;
         Vector2 startPos = transform.position;
+        SoundManager.PlaySound(SoundType.BOSS_DASH);
 
         while (elapsedTime < dashDuration)
         {
