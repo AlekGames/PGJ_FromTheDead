@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -25,18 +26,12 @@ public class GameManager : MonoBehaviour
     private char[] currentGuess;
     private int attemptsLeft = 3;
 
-    private int difficultyLevel = 1;
+    public static int difficultyLevel = 1;
 
     private bool isGameOver = false;
 
-    public Transform ghostTransform;
-
     private int ghostStep = 0;
-
-    public Animator ghostAnimator;
-
-    public ParticleSystem ghostParticles;
-
+  
     public AudioClip correctSound;
     public AudioClip incorrectSound;
 
@@ -54,14 +49,17 @@ public class GameManager : MonoBehaviour
 
     public UIScreenShake screenShake;
 
-
-
+    public Transform grandmaTarget;
+    public Animator grandmaAnimator;
     void Start()
     {
        
         audioSource = GetComponent<AudioSource>();
         dialogueManager.dialogueText.text = "";
+
+        if (difficultyLevel == 1) {
         StartCoroutine(introSequence.RunIntro(this));
+        }
 
        
         tickingSource = gameObject.AddComponent<AudioSource>();
@@ -242,22 +240,26 @@ public class GameManager : MonoBehaviour
             OrbPopEffect popEffect = child.GetComponent<OrbPopEffect>();
             if (popEffect != null)
             {
-                popEffect.Pop();
+                popEffect.Pop(grandmaTarget);
             }
         }
+            grandmaAnimator.SetTrigger("Win");
+
             
             // Incrémenter la difficulté (max = 4)
             if (difficultyLevel < 4)
                 difficultyLevel++;
 
             // Lancer un nouveau mot avec difficulté augmentée
-            Invoke("StartNewGame", 2f); 
+            //Invoke("StartNewGame", 2f);
+            dialogueManager.ShowDialogue("come back from the dead now...");
+            StartCoroutine(ShowWinScreen());  
         }
 
         else if (attemptsLeft <= 0)
         {
             Debug.Log("Perdu !");
-            ShowGameOver();
+            StartCoroutine(ShowGameOver());
         }
     }
 
@@ -276,7 +278,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void ShowGameOver()
+    private System.Collections.IEnumerator ShowWinScreen()
+    {
+
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("WinScreen");
+    }
+
+    private System.Collections.IEnumerator ShowGameOver()
     {
         isGameOver = true;
         
@@ -300,12 +309,16 @@ public class GameManager : MonoBehaviour
         if (tickingSource != null)
         tickingSource.Stop();
 
+
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("LoseScreen");
+
     }
 
     void MoveGhostUp()
     {
         ghostStep++;
-
+/*
         switch (ghostStep)
         {
             case 1:
@@ -317,7 +330,8 @@ public class GameManager : MonoBehaviour
             case 3:
                 ghostAnimator.SetTrigger("Shake3");
                 break;
-        }
+        }*/
+        /*
 
         if (ghostParticles != null)
         {
@@ -327,6 +341,8 @@ public class GameManager : MonoBehaviour
             ghostParticles.Play();
             StartCoroutine(StopGhostParticlesAfter(0.6f));
         }
+        */
+
     }
 
     public void TriggerGameOverByTimer()
@@ -335,12 +351,13 @@ public class GameManager : MonoBehaviour
         ShowGameOver();
     }
 
-    System.Collections.IEnumerator StopGhostParticlesAfter(float delay)
+    /*System.Collections.IEnumerator StopGhostParticlesAfter(float delay)
     {
         yield return new WaitForSeconds(delay);
         if (ghostParticles != null)
             ghostParticles.Stop();
     }
+    */
 
     System.Collections.IEnumerator FadeInLetter(TextMeshProUGUI text, string newLetter)
     {

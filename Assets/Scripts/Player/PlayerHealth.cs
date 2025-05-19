@@ -51,6 +51,12 @@ public class PlayerHealth : MonoBehaviour
 
     public void GameOver()
     {
-        SceneManager.LoadScene("LoseScreen");
+        if (GameManager.difficultyLevel < 4) {
+        SceneManager.LoadScene("Hangman");
+        }
+
+        else {
+            SceneManager.LoadScene("LoseScreen");
+        }
     }
 }
