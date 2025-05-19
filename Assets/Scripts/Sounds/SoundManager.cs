@@ -33,6 +33,7 @@ public class SoundManager : MonoBehaviour
         }
         else
         {
+            if (!instance.audioSource) return;
             instance.audioSource.outputAudioMixerGroup = soundList.mixer;
             instance.audioSource.PlayOneShot(randomClip, volume * soundList.volume);
         }
